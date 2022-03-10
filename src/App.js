@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import About from "./components/About/About.js";
+import CaseStudies from "./components/CaseStudies/CaseStudies.js";
+import Contact from "./components/Contact/Contact.js";
+import Home from "./components/Home/Home.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/about'>About</Link>
+              </li>
+              <li>
+                <Link to='/case-studies'>CaseStudies</Link>
+              </li>
+              <li>
+                <Link to='/contact'>Contact</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path='/about'>
+              <About cname='About component' />
+            </Route>
+            <Route path='/case-studies'>
+              <CaseStudies cname='CaseStudies component' />
+            </Route>
+            <Route path='/contact'>
+              <Contact cname='Contact component' />
+            </Route>
+            <Route path='/home'>
+              <Home cname='Home component' />
+            </Route>
+            <Route path='/'>
+              <Home cname='Home component' />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
