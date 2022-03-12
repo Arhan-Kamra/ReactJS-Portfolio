@@ -1,6 +1,4 @@
-import "./index.module.scss";
-
-import App from "./App";
+import App from "./components/App/index";
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
