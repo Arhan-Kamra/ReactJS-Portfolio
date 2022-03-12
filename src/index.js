@@ -1,8 +1,7 @@
-import "./index.module.scss";
-
-import App from "./App";
+import App from "./components/App/App";
 import React from "react";
 import ReactDOM from "react-dom";
+import Styles from "./index.module.scss";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
